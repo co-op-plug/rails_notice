@@ -1,23 +1,36 @@
-$:.push File.expand_path('lib', __dir__)
-require 'rails_notice/version'
+# -*- encoding: utf-8 -*-
+# stub: rails_notice 1.0.2 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = 'rails_notice'
-  s.version = RailsNotice::VERSION
-  s.authors = ['qinmingyuan']
-  s.email = ['mingyuan0715@foxmail.com']
-  s.homepage = 'https://github.com/work-design/rails_notice'
-  s.summary = 'Notification Center for Rails Application'
-  s.description = 'Description of RailsNotice.'
-  s.license = 'LGPL-3.0'
+  s.name = "rails_notice".freeze
+  s.version = "1.0.2"
 
-  s.files = Dir[
-    '{app,config,db,lib}/**/*',
-    'LICENSE',
-    'Rakefile',
-    'README.md'
-  ]
+  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib".freeze]
+  s.authors = ["qinmingyuan".freeze]
+  s.date = "2020-10-29"
+  s.description = "Description of RailsNotice.".freeze
+  s.email = ["mingyuan0715@foxmail.com".freeze]
+  s.files = ["LICENSE".freeze, "README.md".freeze, "Rakefile".freeze, "app/channels/receiver_channel.rb".freeze, "app/controllers/notice".freeze, "app/controllers/notice/admin".freeze, "app/controllers/notice/admin/annunciates_controller.rb".freeze, "app/controllers/notice/admin/annunciations_controller.rb".freeze, "app/controllers/notice/admin/base_controller.rb".freeze, "app/controllers/notice/admin/notification_settings_controller.rb".freeze, "app/controllers/notice/admin/notifications_controller.rb".freeze, "app/controllers/notice/my".freeze, "app/controllers/notice/my/base_controller.rb".freeze, "app/controllers/notice/my/notification_settings_controller.rb".freeze, "app/controllers/notice/my/notifications_controller.rb".freeze, "app/controllers/notice/receivers_controller.rb".freeze, "app/javascript/packs/controllers/notice".freeze, "app/javascript/packs/controllers/notice/admin".freeze, "app/javascript/packs/controllers/notice/admin/annunciations".freeze, "app/javascript/packs/controllers/notice/admin/annunciations/edit_publish.js".freeze, "app/javascript/packs/controllers/notice/admin/notification_settings".freeze, "app/javascript/packs/controllers/notice/admin/notification_settings/index.js".freeze, "app/javascript/packs/controllers/notice/admin/notifications".freeze, "app/javascript/packs/controllers/notice/admin/notifications/index.js".freeze, "app/javascript/packs/controllers/notice/admin/notify_settings".freeze, "app/javascript/packs/controllers/notice/admin/notify_settings/edit.js".freeze, "app/javascript/packs/controllers/notice/admin/notify_settings/index.js".freeze, "app/javascript/packs/controllers/notice/admin/notify_settings/new.js".freeze, "app/javascript/packs/rails_notice".freeze, "app/javascript/packs/rails_notice/cable.js".freeze, "app/javascript/stylesheets/rails_notice".freeze, "app/javascript/stylesheets/rails_notice/cable.css".freeze, "app/jobs/annunciation_unread_count_job.rb".freeze, "app/jobs/notification_job.rb".freeze, "app/jobs/notification_setting_reset_job.rb".freeze, "app/mailers/rails_notice_mailer.rb".freeze, "app/models/annunciate.rb".freeze, "app/models/annunciation.rb".freeze, "app/models/notification.rb".freeze, "app/models/notification_sending.rb".freeze, "app/models/notification_setting.rb".freeze, "app/models/rails_notice".freeze, "app/models/rails_notice/annunciate.rb".freeze, "app/models/rails_notice/annunciation.rb".freeze, "app/models/rails_notice/notifiable.rb".freeze, "app/models/rails_notice/notification.rb".freeze, "app/models/rails_notice/notification_sending.rb".freeze, "app/models/rails_notice/notification_setting.rb".freeze, "app/models/rails_notice/publisher.rb".freeze, "app/models/rails_notice/receiver.rb".freeze, "app/models/rails_notice/user_tagged.rb".freeze, "app/models/rails_notice_send".freeze, "app/models/rails_notice_send/getui.rb".freeze, "app/models/rails_notice_send/mailer.rb".freeze, "app/models/rails_notice_send/socket.rb".freeze, "app/models/rails_notice_send/wechat.rb".freeze, "app/models/user_tagged.rb".freeze, "app/views/application/_notice_link.html.erb".freeze, "app/views/application/_notice_nav.html.erb".freeze, "app/views/my/_notice_nav.html.erb".freeze, "app/views/notice".freeze, "app/views/notice/admin".freeze, "app/views/notice/admin/annunciates".freeze, "app/views/notice/admin/annunciates/_filter.html.erb".freeze, "app/views/notice/admin/annunciates/_form.html.erb".freeze, "app/views/notice/admin/annunciates/_show_table.html.erb".freeze, "app/views/notice/admin/annunciates/index.html.erb".freeze, "app/views/notice/admin/annunciations".freeze, "app/views/notice/admin/annunciations/_edit_publish.html.erb".freeze, "app/views/notice/admin/annunciations/_filter.html.erb".freeze, "app/views/notice/admin/annunciations/_form.html.erb".freeze, "app/views/notice/admin/annunciations/_tag_options.html.erb".freeze, "app/views/notice/admin/annunciations/edit_publish.js.erb".freeze, "app/views/notice/admin/annunciations/index.html.erb".freeze, "app/views/notice/admin/annunciations/options.js.erb".freeze, "app/views/notice/admin/annunciations/show.html.erb".freeze, "app/views/notice/admin/annunciations/update_publish.js.erb".freeze, "app/views/notice/admin/notification_settings".freeze, "app/views/notice/admin/notification_settings/_filter.html.erb".freeze, "app/views/notice/admin/notification_settings/_form.html.erb".freeze, "app/views/notice/admin/notification_settings/edit.html.erb".freeze, "app/views/notice/admin/notification_settings/index.html.erb".freeze, "app/views/notice/admin/notification_settings/new.html.erb".freeze, "app/views/notice/admin/notification_settings/show.html.erb".freeze, "app/views/notice/admin/notifications".freeze, "app/views/notice/admin/notifications/_filter.html.erb".freeze, "app/views/notice/admin/notifications/_form.html.erb".freeze, "app/views/notice/admin/notifications/create.js.erb".freeze, "app/views/notice/admin/notifications/destroy.js.erb".freeze, "app/views/notice/admin/notifications/edit.html.erb".freeze, "app/views/notice/admin/notifications/index.html.erb".freeze, "app/views/notice/admin/notifications/new.html.erb".freeze, "app/views/notice/admin/notifications/update.js.erb".freeze, "app/views/notice/my".freeze, "app/views/notice/my/notification_settings".freeze, "app/views/notice/my/notification_settings/_form.html.erb".freeze, "app/views/notice/my/notification_settings/show.html.erb".freeze, "app/views/notice/my/notifications".freeze, "app/views/notice/my/notifications/_navbar.html.erb".freeze, "app/views/notice/my/notifications/_notification.json.jbuilder".freeze, "app/views/notice/my/notifications/_notifications.html.erb".freeze, "app/views/notice/my/notifications/archive.json.jbuilder".freeze, "app/views/notice/my/notifications/index.html.erb".freeze, "app/views/notice/my/notifications/index.js.erb".freeze, "app/views/notice/my/notifications/index.json.jbuilder".freeze, "app/views/notice/my/notifications/read.js.erb".freeze, "app/views/notice/my/notifications/read.json.jbuilder".freeze, "app/views/notice/my/notifications/read_all.js.erb".freeze, "app/views/notice/my/notifications/read_all.json.jbuilder".freeze, "app/views/notice/my/notifications/show.html.erb".freeze, "app/views/notice/my/notifications/show.json.jbuilder".freeze, "app/views/rails_notice_mailer".freeze, "app/views/rails_notice_mailer/notify.html.erb".freeze, "config/locales/en.yml".freeze, "config/locales/zh.attributes.yml".freeze, "config/locales/zh.enum.yml".freeze, "config/locales/zh.yml".freeze, "config/routes.rb".freeze, "lib/rails_notice".freeze, "lib/rails_notice.rb".freeze, "lib/rails_notice/active_record.rb".freeze, "lib/rails_notice/config.rb".freeze, "lib/rails_notice/engine.rb".freeze, "lib/rails_notice/i18n_helper.rb".freeze, "lib/rails_notice/version.rb".freeze]
+  s.homepage = "https://github.com/work-design/rails_notice".freeze
+  s.licenses = ["LGPL-3.0".freeze]
+  s.rubygems_version = "2.7.7".freeze
+  s.summary = "Notification Center for Rails Application".freeze
 
-  s.add_dependency 'rails_com', '~> 1.2'
-  s.add_dependency 'rails_auth'
+  s.installed_by_version = "2.7.7" if s.respond_to? :installed_by_version
+
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
+
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<rails_com>.freeze, ["~> 1.2"])
+      s.add_runtime_dependency(%q<rails_auth>.freeze, [">= 0"])
+    else
+      s.add_dependency(%q<rails_com>.freeze, ["~> 1.2"])
+      s.add_dependency(%q<rails_auth>.freeze, [">= 0"])
+    end
+  else
+    s.add_dependency(%q<rails_com>.freeze, ["~> 1.2"])
+    s.add_dependency(%q<rails_auth>.freeze, [">= 0"])
+  end
 end
